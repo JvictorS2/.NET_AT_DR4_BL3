@@ -5,20 +5,24 @@
 }
 
 <form method="get" action="@Url.Action("FindingByName", "Funcionarios")">
-    <label for="nome">Nome do Produto:</label>
+    <label for="nome">Nome do Funciónario:</label>
     <input type="text" id="nome" name="nome" />
     <button type="submit" class="btn btn-primary">Buscar</button>
 </form>
 
 
-@if (Model != null)
+@if (Model == null)
 {
-    <h1>@Model.Nome</h1>
-    <h1>@Model.Telefone</h1>
-    <h1>@Model.Endereco</h1>
-    <h1>@Model.Departamento.Nome</h1>
+
+    <h1>Procure o nome de algúem em nosso banco</h1>
 }
 else
 {
-    <h1>Nós da o C# PoHaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
+    <ol>
+        <li>@Model.Nome</li>
+        <li>@Model.Telefone</li>
+        <li>@Model.Endereco</li>
+        <li>@Model.Departamento.Nome</li>
+    </ol>
+        
 }
